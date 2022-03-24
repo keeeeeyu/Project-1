@@ -18,8 +18,8 @@ The player's name and finishing time will be displayed on the scoreboard by the 
 
 https://keeeeeyu.github.io/Project-1/
 
-1.Choose difficulty.
-2.Answer all 10 problems.
-3.Type your name into prompt box.
-4.Replay to beat your score.
+1.Choose difficulty.  
+2.Answer all 10 problems.  
+3.Type your name into prompt box.  
+4.Replay to beat your score.  
 
