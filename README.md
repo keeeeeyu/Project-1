@@ -25,6 +25,6 @@ https://keeeeeyu.github.io/Project-1/
 3.Type your name into prompt box.  
 4.Replay to beat your score.  
 
-####Things to improve.
-1.Work on DRY code.
+#### Things to improve.  
+1.Work on DRY code.  
 2.Work with object.
