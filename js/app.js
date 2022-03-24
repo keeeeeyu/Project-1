@@ -29,6 +29,9 @@ let playerName = '';
 let intervalId;
 let highScore = [];
 let replayCount = 0;
+let tickTockSound = new Audio('sound/clock-tick-tock.mp3');
+let correctSound = new Audio('sound/correct.mp3');
+let incorrectSound = new Audio('sound/incorrect.mp3');
 
 const gameObj = {
     arrOperatorEasy: ['+', '-'],
@@ -71,10 +74,20 @@ function compareAnswer(e) {
     playerAnswerHard = document.querySelector('#answer-hard').value;
     if(answer == playerAnswerEasy) {
         correctAnswerCount++;
+        correctSound.play();
+        correctSound.volume = 0.1;
+        correctSound.currentTime = 0;
         easyProblem();
     } else if(answer == playerAnswerHard) {
         correctAnswerCount++;
+        correctSound.play();
+        correctSound.volume = 0.1;
+        correctSound.currentTime = 0;
         hardProblem();
+    } else {
+        incorrectSound.play();
+        incorrectSound.volume = 0.1;
+        incorrectSound.currentTime = 0;
     }
 };
 
@@ -85,6 +98,8 @@ function easyMode() {
     answerInputHard.style.display = 'none';
     easyProblem();
     timeStart();
+    tickTockSound.play();
+    tickTockSound.volume = 0.2;
 };
 
 function hardMode() {
@@ -95,6 +110,8 @@ function hardMode() {
     answerInputHard.style.display = 'block';
     hardProblem();
     timeStart();
+    tickTockSound.play();
+    tickTockSound.volume = 0.5;
 };
 
 function easyProblem() {
@@ -141,6 +158,9 @@ function timeStart() {
 };
 
 function scoreBoard() {
+    tickTockSound.pause();
+    correctSound.pause();
+    incorrectSound.pause();
     alert(`Congratulation! You have completed 10 questions, your time is ${count} sec`);
     playerName = prompt(`Enter player's name`);
     highScore.push([count, playerName]);
