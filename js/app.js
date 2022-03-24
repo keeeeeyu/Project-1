@@ -1,3 +1,4 @@
+// Elements
 const easyModeEl = document.querySelector('#easy-mode');
 const hardModeEl = document.querySelector('#hard-mode');
 const replayBtn = document.querySelector('#replay');
@@ -14,12 +15,14 @@ const timefinish1 = document.querySelector('#time-finished1');
 const timefinish2 = document.querySelector('#time-finished2');
 const timefinish3 = document.querySelector('#time-finished3');
 
+//Event Listners
 easyModeEl.addEventListener('click', easyMode);
 hardModeEl.addEventListener('click', hardMode);
 replayBtn.addEventListener('click', init);
 answerInputEasy.addEventListener('keydown', keydown);
 answerInputHard.addEventListener('keydown', keydown);
 
+// Variables
 let playerAnswerEasy = null;
 let playerAnswerHard = null;
 let correctAnswerCount = 0;
@@ -66,29 +69,6 @@ function init() {
 function randomOperatorEasy() {
     let operator =  Math.floor(Math.random() * gameObj.arrOperatorEasy.length);
     return gameObj.arrOperatorEasy[operator];
-};
-
-function compareAnswer(e) {
-    e.preventDefault();
-    playerAnswerEasy = document.querySelector('#answer-easy').value;
-    playerAnswerHard = document.querySelector('#answer-hard').value;
-    if(answer == playerAnswerEasy) {
-        correctAnswerCount++;
-        correctSound.play();
-        correctSound.volume = 0.1;
-        correctSound.currentTime = 0;
-        easyProblem();
-    } else if(answer == playerAnswerHard) {
-        correctAnswerCount++;
-        correctSound.play();
-        correctSound.volume = 0.1;
-        correctSound.currentTime = 0;
-        hardProblem();
-    } else {
-        incorrectSound.play();
-        incorrectSound.volume = 0.1;
-        incorrectSound.currentTime = 0;
-    }
 };
 
 function easyMode() {
@@ -146,6 +126,29 @@ function hardProblem() {
     } else {
         scoreBoard();
     } 
+};
+
+function compareAnswer(e) {
+    e.preventDefault();
+    playerAnswerEasy = document.querySelector('#answer-easy').value;
+    playerAnswerHard = document.querySelector('#answer-hard').value;
+    if(answer == playerAnswerEasy) {
+        correctAnswerCount++;
+        correctSound.play();
+        correctSound.volume = 0.1;
+        correctSound.currentTime = 0;
+        easyProblem();
+    } else if(answer == playerAnswerHard) {
+        correctAnswerCount++;
+        correctSound.play();
+        correctSound.volume = 0.1;
+        correctSound.currentTime = 0;
+        hardProblem();
+    } else {
+        incorrectSound.play();
+        incorrectSound.volume = 0.1;
+        incorrectSound.currentTime = 0;
+    }
 };
 
 function timeLimit() {
