@@ -14,7 +14,11 @@ const timefinish1 = document.querySelector('#time-finished1')
 const timefinish2 = document.querySelector('#time-finished2')
 const timefinish3 = document.querySelector('#time-finished3')
 
-
+easyModeEl.addEventListener('click', easyMode);
+hardModeEl.addEventListener('click', hardMode);
+replayBtn.addEventListener('click', init);
+answerInputEasy.addEventListener('keydown', keydown);
+answerInputHard.addEventListener('keydown', keydown);
 
 let playerAnswerEasy = null;
 let playerAnswerHard = null;
@@ -36,19 +40,12 @@ const gameObj = {
     } 
 };
 
-easyModeEl.addEventListener('click', easyMode);
-hardModeEl.addEventListener('click', hardMode);
-replayBtn.addEventListener('click', init);
-
 function keydown(e) {
     if(e.key === 'Enter') {
         compareAnswer(e);
         document.querySelector('form').reset();
     }
 };
-
-answerInputEasy.addEventListener('keydown', keydown);
-answerInputHard.addEventListener('keydown', keydown);
 
 function init() {
    easyModeEl.style.display = 'inline-block';
