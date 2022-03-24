@@ -25,9 +25,9 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-end;
     text-align: center;
-    min-height: 100vh;
+    min-height: 30vh;
 }
 
 #easy-mode {
@@ -68,12 +68,13 @@ body {
 
 .time-limit {
     color: red;
-    font-size: 50px;
+    font-size: 100px;
+    text-align: center;
 }
 
 .random-problem {
     color: black;
-    font-size: 50px;
+    font-size: 200px;
     text-align: center;
 }
 
@@ -94,5 +95,33 @@ body {
 #main-score-board {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 300px;
+    width: 500px;
+    height: 300px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#answer-easy {
+    height: 100px;
+    width: 500px;
+    font-size: 50px;
+    text-align: center;
+}
+
+#answer-hard {
+    height: 100px;
+    width: 500px;
+    font-size: 50px;
+    text-align: center; 
+}
+
+#replay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 150px;
+    font-size: 30px;
+    text-align: center;
+    margin: auto;
 }

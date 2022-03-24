@@ -1,19 +1,20 @@
-// Set the elements here.
 const easyModeEl = document.querySelector('#easy-mode');
 const hardModeEl = document.querySelector('#hard-mode');
 const replayBtn = document.querySelector('#replay');
-// const scoreBoardEl = document.querySelector('.score-board');
 const randomProblemEl = document.querySelector('.random-problem');
 const timeLimitEl = document.querySelector('.time-limit');
-// const finalScoreBoard = document.querySelector('#final');
 const start = document.querySelector('#start');
 const end = document.querySelector('#end');
 const answerInputEasy = document.querySelector('#answer-easy');
 const answerInputHard = document.querySelector('#answer-hard');
-// const time = document.querySelector('.time-finished');
-// const nameDisplay = document.querySelector('.scoreboard');
+const nameboard1 = document.querySelector('#scoreboard1')
+const nameboard2 = document.querySelector('#scoreboard2')
+const nameboard3 = document.querySelector('#scoreboard3')
+const timefinish1 = document.querySelector('#time-finished1')
+const timefinish2 = document.querySelector('#time-finished2')
+const timefinish3 = document.querySelector('#time-finished3')
 
-// Variables
+
 
 let playerAnswerEasy = null;
 let playerAnswerHard = null;
@@ -22,8 +23,8 @@ let answer = null;
 let count = 0;
 let playerName = '';
 let intervalId;
-let gameTime = [];
-let gameName = [];
+let highScore = [];
+let replayCount = 0;
 
 const gameObj = {
     arrOperatorEasy: ['+', '-'],
@@ -59,6 +60,7 @@ function init() {
    answer = null;
    count = 0;
    timeLimitEl.innerHTML = `${count}`;
+   replayCount++;
 };
 
 function randomOperatorEasy() {
@@ -139,33 +141,33 @@ function timeStart() {
     intervalId = setInterval(timeLimit, 1000);
 };
 
-// function scoreBoard() {
-//     alert(`Congratulation! You have completed 10 questions, your time is ${count} sec`);
-//     playerName = prompt(`Enter player's name`);
-//     time.innerHTML = `${count} sec`;
-//     nameDisplay.innerHTML = `${playerName}`;
-//     end.style.display = 'block';
-//     start.style.display = 'none';
-//     clearInterval(intervalId);
-// };
 function scoreBoard() {
     alert(`Congratulation! You have completed 10 questions, your time is ${count} sec`);
     playerName = prompt(`Enter player's name`);
-    gameTime.push(count);
-    gameName.push(playerName);
+    highScore.push([count, playerName])
     inpScoreInfo();
     end.style.display = 'block';
     start.style.display = 'none';
     clearInterval(intervalId);
 };
 function inpScoreInfo() {
-    gameTime.sort(function(a, b) {
-        return a - b;
+    highScore.sort(function(a, b) {
+        return a[0] - b[0];
     });
-    document.querySelector('#scoreboard1').innerHTML = `${gameName[0]}`
-    document.querySelector('#time-finished1').innerHTML = `${gameTime[0]} sec`
-    document.querySelector('#scoreboard2').innerHTML = `${gameName[1]}`
-    document.querySelector('#time-finished2').innerHTML = `${gameTime[1]} sec`
-    document.querySelector('#scoreboard3').innerHTML = `${gameName[2]}`
-    document.querySelector('#time-finished3').innerHTML = `${gameTime[2]} sec`
+    if(replayCount === 0) {
+        nameboard1.innerHTML = `${highScore[0][1]}`
+        timefinish1.innerHTML = `${highScore[0][0]} sec`
+    } else if(replayCount === 1) {
+        nameboard1.innerHTML = `${highScore[0][1]}`
+        timefinish1.innerHTML = `${highScore[0][0]} sec`
+        nameboard2.innerHTML = `${highScore[1][1]}`
+        timefinish2.innerHTML = `${highScore[1][0]} sec`
+    } else if(replayCount === 2) {
+        nameboard1.innerHTML = `${highScore[0][1]}`
+        timefinish1.innerHTML = `${highScore[0][0]} sec`
+        nameboard2.innerHTML = `${highScore[1][1]}`
+        timefinish2.innerHTML = `${highScore[1][0]} sec`
+        nameboard3.innerHTML = `${highScore[2][1]}`
+        timefinish3.innerHTML = `${highScore[2][0]} sec`
+    }
 };
