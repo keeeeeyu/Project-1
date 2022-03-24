@@ -22,7 +22,7 @@ answerInputHard.addEventListener('keydown', keydown);
 
 let playerAnswerEasy = null;
 let playerAnswerHard = null;
-let correctAnswerCount = null;
+let correctAnswerCount = 0;
 let answer = null;
 let count = 0;
 let playerName = '';
@@ -134,6 +134,7 @@ function timeLimit() {
     count++;
     timeLimitEl.innerHTML = `${count}`;
 };
+
 function timeStart() {
     intervalId = setInterval(timeLimit, 1000);
 };
