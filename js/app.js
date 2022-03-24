@@ -100,13 +100,13 @@ function hardMode() {
 };
 
 function easyProblem() {
-    if(correctAnswerCount <= 0) {
+    if(correctAnswerCount <= 5) {
         let operand1 = gameObj.randomInt();
         let operand2 = gameObj.randomInt();
         let operator = randomOperatorEasy();
         answer = operator === '+' ? operand1 + operand2 : operand1 - operand2;
         randomProblemEl.innerText = `${operand1} ${operator} ${operand2}`;
-    } else if(correctAnswerCount > 0 && correctAnswerCount <= 0) {
+    } else if(correctAnswerCount > 5 && correctAnswerCount <= 10) {
         let operand1 = gameObj.raiseDifficulty();
         let operand2 = gameObj.raiseDifficulty();
         let operator = randomOperatorEasy();
