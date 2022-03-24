@@ -7,12 +7,12 @@ const start = document.querySelector('#start');
 const end = document.querySelector('#end');
 const answerInputEasy = document.querySelector('#answer-easy');
 const answerInputHard = document.querySelector('#answer-hard');
-const nameboard1 = document.querySelector('#scoreboard1')
-const nameboard2 = document.querySelector('#scoreboard2')
-const nameboard3 = document.querySelector('#scoreboard3')
-const timefinish1 = document.querySelector('#time-finished1')
-const timefinish2 = document.querySelector('#time-finished2')
-const timefinish3 = document.querySelector('#time-finished3')
+const nameboard1 = document.querySelector('#scoreboard1');
+const nameboard2 = document.querySelector('#scoreboard2');
+const nameboard3 = document.querySelector('#scoreboard3');
+const timefinish1 = document.querySelector('#time-finished1');
+const timefinish2 = document.querySelector('#time-finished2');
+const timefinish3 = document.querySelector('#time-finished3');
 
 easyModeEl.addEventListener('click', easyMode);
 hardModeEl.addEventListener('click', hardMode);
@@ -85,7 +85,8 @@ function easyMode() {
     answerInputHard.style.display = 'none';
     easyProblem();
     timeStart();
-}
+};
+
 function hardMode() {
     start.style.display = 'block';
     easyModeEl.style.display = 'none';
@@ -142,30 +143,31 @@ function timeStart() {
 function scoreBoard() {
     alert(`Congratulation! You have completed 10 questions, your time is ${count} sec`);
     playerName = prompt(`Enter player's name`);
-    highScore.push([count, playerName])
+    highScore.push([count, playerName]);
     inpScoreInfo();
     end.style.display = 'block';
     start.style.display = 'none';
     clearInterval(intervalId);
 };
+
 function inpScoreInfo() {
     highScore.sort(function(a, b) {
         return a[0] - b[0];
     });
     if(replayCount === 0) {
-        nameboard1.innerHTML = `${highScore[0][1]}`
-        timefinish1.innerHTML = `${highScore[0][0]} sec`
+        nameboard1.innerHTML = `${highScore[0][1]}`;
+        timefinish1.innerHTML = `${highScore[0][0]} sec`;
     } else if(replayCount === 1) {
-        nameboard1.innerHTML = `${highScore[0][1]}`
-        timefinish1.innerHTML = `${highScore[0][0]} sec`
-        nameboard2.innerHTML = `${highScore[1][1]}`
-        timefinish2.innerHTML = `${highScore[1][0]} sec`
+        nameboard1.innerHTML = `${highScore[0][1]}`;
+        timefinish1.innerHTML = `${highScore[0][0]} sec`;
+        nameboard2.innerHTML = `${highScore[1][1]}`;
+        timefinish2.innerHTML = `${highScore[1][0]} sec`;
     } else if(replayCount === 2) {
-        nameboard1.innerHTML = `${highScore[0][1]}`
-        timefinish1.innerHTML = `${highScore[0][0]} sec`
-        nameboard2.innerHTML = `${highScore[1][1]}`
-        timefinish2.innerHTML = `${highScore[1][0]} sec`
-        nameboard3.innerHTML = `${highScore[2][1]}`
-        timefinish3.innerHTML = `${highScore[2][0]} sec`
+        nameboard1.innerHTML = `${highScore[0][1]}`;
+        timefinish1.innerHTML = `${highScore[0][0]} sec`;
+        nameboard2.innerHTML = `${highScore[1][1]}`;
+        timefinish2.innerHTML = `${highScore[1][0]} sec`;
+        nameboard3.innerHTML = `${highScore[2][1]}`;
+        timefinish3.innerHTML = `${highScore[2][0]} sec`;
     }
 };
