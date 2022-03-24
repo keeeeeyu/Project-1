@@ -11,10 +11,12 @@ The answers can be either **positive** or **negative**.
 After completing all 10 problems, you will see the prompt box with the input box where you can enter the player's name for the **scoreboard**.  
 The player's name and finishing time will be displayed on the scoreboard by the order of shortest time the player finished.
 
-![alt text](https://i.imgur.com/HIMgL1X.png)
-![alt text](https://i.imgur.com/jiLPZIs.png)
-![alt text](https://i.imgur.com/nLnU1Qn.png)
-![alt text](https://i.imgur.com/a1wD1wf.png)
+![alt text](https://i.imgur.com/Hgp95jt.png)
+![alt text](https://i.imgur.com/KY3qlxo.png)
+![alt text](https://i.imgur.com/akRtb02.png)
+![alt text](https://i.imgur.com/3Nd4bpK.png)
+
+Technologies Used: JavaScript, HTML, and CSS.
 
 https://keeeeeyu.github.io/Project-1/
 
