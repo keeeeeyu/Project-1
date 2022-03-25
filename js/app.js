@@ -32,6 +32,8 @@ let playerName = '';
 let intervalId;
 let highScore = [];
 let replayCount = 0;
+
+// Audio
 let tickTockSound = new Audio('sound/clock-tick-tock.mp3');
 let correctSound = new Audio('sound/correct.mp3');
 let incorrectSound = new Audio('sound/incorrect.mp3');
@@ -91,7 +93,7 @@ function hardMode() {
     hardProblem();
     timeStart();
     tickTockSound.play();
-    tickTockSound.volume = 0.5;
+    tickTockSound.volume = 0.2;
 };
 
 function easyProblem() {

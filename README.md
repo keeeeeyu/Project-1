@@ -16,7 +16,8 @@ The player's name and finishing time will be displayed on the scoreboard by the 
 ![alt text](https://i.imgur.com/akRtb02.png)
 ![alt text](https://i.imgur.com/3Nd4bpK.png)
 
-Technologies Used: JavaScript, HTML, and CSS.
+## Technologies Used:  
+JavaScript, HTML, and CSS.
 
 https://keeeeeyu.github.io/Project-1/
 
@@ -25,6 +26,6 @@ https://keeeeeyu.github.io/Project-1/
 3.Type your name into prompt box.  
 4.Replay to beat your score.  
 
-#### Things to improve.  
-1.Work on DRY code.  
-2.Work with object.
+## Things to improve.   
+1. Store Data.
+2. Mobile version.
